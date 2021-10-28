@@ -6,19 +6,19 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>792</width>
-    <height>455</height>
+    <width>777</width>
+    <height>435</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Dodaj jamo</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QPushButton" name="vnesiButton">
     <property name="geometry">
      <rect>
       <x>670</x>
-      <y>400</y>
+      <y>380</y>
       <width>87</width>
       <height>27</height>
      </rect>
@@ -32,8 +32,8 @@
      <rect>
       <x>10</x>
       <y>30</y>
-      <width>751</width>
-      <height>352</height>
+      <width>741</width>
+      <height>337</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_2">

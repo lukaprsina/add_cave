@@ -11,6 +11,7 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    // https://doc.qt.io/qt-5/windows-deployment.html
 }
 
 MainWindow::~MainWindow()
@@ -21,53 +22,53 @@ MainWindow::~MainWindow()
 void MainWindow::on_novaMeritevFolder_clicked()
 {
     m_Nova.meritev = get_svx_file(m_DefaultPath);
-    ui->novaMeritevPath->setText(tr(m_Nova.meritev.c_str()));
+    ui->novaMeritevPath->setText(QString::fromStdString(m_Nova.meritev.generic_string()));
 
     auto leto_folder = canonical_path(m_Nova.meritev.parent_path().parent_path());
     m_Nova.leto = canonical_path(get_svx_file_in_folder(leto_folder));
-    ui->novaLetoPath->setText(tr(m_Nova.leto.c_str()));
+    ui->novaLetoPath->setText(QString::fromStdString(m_Nova.leto.generic_string()));
 
     auto jama_folder = canonical_path(m_Nova.leto.parent_path().parent_path());
     m_Nova.jama = canonical_path(get_svx_file_in_folder(jama_folder));
-    ui->novaJamaPath->setText(tr(m_Nova.jama.c_str()));
+    ui->novaJamaPath->setText(QString::fromStdString(m_Nova.jama.generic_string()));
 }
 
 void MainWindow::on_staraMeritevFolder_clicked()
 {
     m_Stara.meritev = get_svx_file(m_DefaultPath);
-    ui->staraMeritevPath->setText(tr(m_Stara.meritev.c_str()));
+    ui->staraMeritevPath->setText(QString::fromStdString(m_Stara.meritev.generic_string()));
 
     auto leto_folder = canonical_path(m_Stara.meritev.parent_path().parent_path());
     m_Stara.leto = canonical_path(get_svx_file_in_folder(leto_folder));
-    ui->staraLetoPath->setText(tr(m_Stara.leto.c_str()));
+    ui->staraLetoPath->setText(QString::fromStdString(m_Stara.leto.generic_string()));
 
     auto jama_folder = canonical_path(m_Stara.leto.parent_path().parent_path());
     m_Stara.jama = canonical_path(get_svx_file_in_folder(jama_folder));
-    ui->staraJamaPath->setText(tr(m_Stara.jama.c_str()));
+    ui->staraJamaPath->setText(QString::fromStdString(m_Stara.jama.generic_string()));
 }
 
 void MainWindow::on_novaLetoFolder_clicked()
 {
     m_Nova.leto = get_svx_file(m_DefaultPath);
-    ui->novaLetoPath->setText(tr(m_Nova.leto.c_str()));
+    ui->novaLetoPath->setText(QString::fromStdString(m_Nova.leto.generic_string()));
 }
 
 void MainWindow::on_staraLetoFolder_clicked()
 {
     m_Stara.leto = get_svx_file(m_DefaultPath);
-    ui->staraLetoPath->setText(tr(m_Stara.leto.c_str()));
+    ui->staraLetoPath->setText(QString::fromStdString(m_Stara.leto.generic_string()));
 }
 
 void MainWindow::on_novaJamaFolder_clicked()
 {
     m_Nova.jama = get_svx_file(m_DefaultPath);
-    ui->novaJamaPath->setText(tr(m_Nova.jama.c_str()));
+    ui->novaJamaPath->setText(QString::fromStdString(m_Nova.jama.generic_string()));
 }
 
 void MainWindow::on_staraJamaFolder_clicked()
 {
     m_Stara.jama = get_svx_file(m_DefaultPath);
-    ui->staraJamaPath->setText(tr(m_Stara.jama.c_str()));
+    ui->staraJamaPath->setText(QString::fromStdString(m_Stara.jama.generic_string()));
 }
 
 void MainWindow::on_vnesiButton_clicked()
@@ -81,7 +82,8 @@ void MainWindow::on_vnesiButton_clicked()
         ui->staraTocka->text().isEmpty())
     {
         QMessageBox msgBox;
-        msgBox.setText(tr("Izpolnite vsa polja."));
+        msgBox.setWindowTitle(tr("Dodaj jamo"));
+        msgBox.setText(QString::fromStdString("Izpolnite vsa polja."));
         msgBox.exec();
         return;
     }
@@ -98,7 +100,7 @@ void MainWindow::on_vnesiButton_clicked()
         std::string folder = m_Nova.meritev.parent_path().filename().generic_string();
         std::string name = m_Nova.meritev.stem().generic_string();
 
-        std::string include = "\t*include " + folder + "/" + name;
+        std::string include = "*include " + folder + "/" + name;
 
         if (end_statements.size() == 1)
             lines.insert(end_statements[0] - 1, include);
@@ -121,7 +123,7 @@ void MainWindow::on_vnesiButton_clicked()
         std::string old_year = m_Stara.leto.parent_path().filename().generic_string();
         std::string old_name = m_Stara.meritev.stem().generic_string();
 
-        std::string include = "\t*equate " + new_year + "." + new_name + "." +
+        std::string include = "*equate " + new_year + "." + new_name + "." +
                               ui->novaTocka->text().toStdString() + " " +
                               old_year + "." + old_name + "." +
                               ui->staraTocka->text().toStdString();
@@ -133,7 +135,8 @@ void MainWindow::on_vnesiButton_clicked()
     }
 
     QMessageBox msgBox;
-    msgBox.setText(tr("Meritve so vnešene."));
+    msgBox.setWindowTitle(tr("Dodaj jamo"));
+    msgBox.setText(QString::fromStdString("Meritve so vnešene."));
     msgBox.exec();
 }
 
@@ -143,7 +146,8 @@ std::vector<std::string> MainWindow::read_file(std::filesystem::path path)
     if (!in)
     {
         QMessageBox msgBox;
-        msgBox.setText(tr("Datoteke ni mogoče prebrati."));
+        msgBox.setWindowTitle(tr("Dodaj jamo"));
+        msgBox.setText(QString::fromStdString("Datoteke ni mogoče prebrati."));
         msgBox.exec();
         return {};
     }
@@ -163,7 +167,8 @@ void MainWindow::write_file(std::filesystem::path path, std::vector<std::string>
     if (!out)
     {
         QMessageBox msgBox;
-        msgBox.setText(tr("Datoteke ni mogoče prebrati."));
+        msgBox.setWindowTitle(tr("Dodaj jamo"));
+        msgBox.setText(QString::fromStdString("Datoteke ni mogoče prebrati."));
         msgBox.exec();
         return;
     }
@@ -174,7 +179,7 @@ void MainWindow::write_file(std::filesystem::path path, std::vector<std::string>
 
 std::filesystem::path MainWindow::get_svx_file(std::filesystem::path open_path)
 {
-    QString name = QFileDialog::getOpenFileName(this, tr("Open survex file"), canonical_path(open_path).c_str(), tr("svx Files (*.svx)"));
+    QString name = QFileDialog::getOpenFileName(this, tr("Open survex file"), QString::fromStdString(canonical_path(open_path).generic_string()), tr("svx Files (*.svx)"));
     auto path_name = canonical_path(name.toStdString());
     return path_name;
 }
@@ -191,7 +196,8 @@ std::filesystem::path MainWindow::canonical_path(std::filesystem::path path)
     if (error_code.value() != 0)
     {
         QMessageBox msgBox;
-        msgBox.setText(tr(
+        msgBox.setWindowTitle(tr("Dodaj jamo"));
+        msgBox.setText(QString::fromStdString(
             std::string(std::string("The path ") + path.generic_string() + std::string(" isn't a real path.")).c_str()));
         msgBox.exec();
         svx_path.clear();
@@ -216,12 +222,13 @@ std::filesystem::path MainWindow::get_svx_file_in_folder(std::filesystem::path p
     if (number_of_svx_files != 1)
     {
         QMessageBox msgBox;
+        msgBox.setWindowTitle(tr("Dodaj jamo"));
 
         if (number_of_svx_files == 2)
-            msgBox.setText(tr(
+            msgBox.setText(QString::fromStdString(
                 std::string(std::string("V mapi ") + path.generic_string() + std::string(" sta ") + std::to_string(number_of_svx_files) + std::string(" .svx datoteki.")).c_str()));
         else
-            msgBox.setText(tr(
+            msgBox.setText(QString::fromStdString(
                 std::string(std::string("V mapi ") + path.generic_string() + std::string(" je ") + std::to_string(number_of_svx_files) + std::string(" .svx datotek.")).c_str()));
 
         msgBox.setInformativeText("Katero hočete izbrati?");

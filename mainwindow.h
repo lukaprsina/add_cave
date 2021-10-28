@@ -70,7 +70,7 @@ private:
     void add_measurment();
     void autocomplete(Meritev &meritev);
 
-    std::filesystem::path m_DefaultPath = "/home/luka/dev/qt/kanin_rombon/surveys/brezno_specega_dinozavra/2021";
+    std::filesystem::path m_DefaultPath = "";///home/luka/dev/qt/kanin_rombon/surveys/brezno_specega_dinozavra/2021";
 
     Meritev m_Nova{};
     Meritev m_Stara{};

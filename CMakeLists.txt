@@ -34,7 +34,7 @@ elseif(UNIX)
 endif()
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
-  qt_add_executable(add_cave MANUAL_FINALIZATION ${PROJECT_SOURCES})
+  qt_add_executable(add_cave WIN32 MANUAL_FINALIZATION ${PROJECT_SOURCES})
   # Define target properties for Android with Qt 6 as: set_property(TARGET
   # add_cave APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
   # ${CMAKE_CURRENT_SOURCE_DIR}/android) For more information, see
