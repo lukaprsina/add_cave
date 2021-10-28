@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>792</width>
+    <height>455</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="vnesiButton">
+    <property name="geometry">
+     <rect>
+      <x>670</x>
+      <y>400</y>
+      <width>87</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Vnesi</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>30</y>
+      <width>751</width>
+      <height>352</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <item>
+      <widget class="QLabel" name="novaLabel">
+       <property name="text">
+        <string>Nova meritev</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="novaMeritevHorizontal">
+       <item>
+        <widget class="QLabel" name="novaMeritevLabel">
+         <property name="text">
+          <string>Datoteka meritve</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="novaMeritevPath">
+         <property name="minimumSize">
+          <size>
+           <width>125</width>
+           <height>27</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="novaMeritevFile">
+         <property name="text">
+          <string>Odpri datoteko...</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="novaMeritevEdit">
+         <property name="text">
+          <string>Uredi datoteko...</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="novaMeritevFolder">
+         <property name="text">
+          <string>Odpri mapo...</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="novaLetoHorizontal">
+       <item>
+        <widget class="QLabel" name="novaLetoLabel">
+         <property name="text">
+          <string>Datoteka leta</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="novaLetoPath">
+         <property name="minimumSize">
+          <size>
+           <width>125</width>
+           <height>27</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="novaLetoFile">
+         <property name="text">
+          <string>Odpri datoteko...</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="novaLetoEdit">
+         <property name="text">
+          <string>Uredi datoteko...</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="novaLetoFolder">
+         <property name="text">
+          <string>Odpri mapo...</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="novaJamaHorizontal">
+       <item>
+        <widget class="QLabel" name="novaJamaLabel">
+         <property name="text">
+          <string>Datoteka jame</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="novaJamaPath">
+         <property name="minimumSize">
+          <size>
+           <width>125</width>
+           <height>27</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="novaJamaFile">
+         <property name="text">
+          <string>Odpri datoteko...</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="novaJamaEdit">
+         <property name="text">
+          <string>Uredi datoteko...</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="novaJamaFolder">
+         <property name="text">
+          <string>Odpri mapo...</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="novaTockaHorizontal">
+       <item>
+        <widget class="QLabel" name="novaTockaLabel">
+         <property name="text">
+          <string>Nova točka</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="novaTocka"/>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QLabel" name="staraLabel">
+       <property name="text">
+        <string>Stara meritev</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="staraMeritevHorizontal">
+       <item>
+        <widget class="QLabel" name="staraMeritevLabel">
+         <property name="text">
+          <string>Datoteka meritve</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="staraMeritevPath"/>
+       </item>
+       <item>
+        <widget class="QPushButton" name="staraMeritevFile">
+         <property name="text">
+          <string>Odpri datoteko...</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="staraMeritevEdit">
+         <property name="text">
+          <string>Uredi datoteko...</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="staraMeritevFolder">
+         <property name="text">
+          <string>Odpri mapo...</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="staraLetoHorizontal">
+       <item>
+        <widget class="QLabel" name="staraLetoLabel">
+         <property name="text">
+          <string>Datoteka leta</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="staraLetoPath">
+         <property name="minimumSize">
+          <size>
+           <width>125</width>
+           <height>27</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="staraLetoFile">
+         <property name="text">
+          <string>Odpri datoteko...</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="staraLetoEdit">
+         <property name="text">
+          <string>Uredi datoteko...</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="staraLetoFolder">
+         <property name="text">
+          <string>Odpri mapo...</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="staraJamaHorizontal">
+       <item>
+        <widget class="QLabel" name="staraJamaLabel">
+         <property name="text">
+          <string>Datoteka jame</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="staraJamaPath">
+         <property name="minimumSize">
+          <size>
+           <width>125</width>
+           <height>27</height>
+          </size>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="staraJamaFile">
+         <property name="text">
+          <string>Odpri datoteko...</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="staraJamaEdit">
+         <property name="text">
+          <string>Uredi datoteko...</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="staraJamaFolder">
+         <property name="text">
+          <string>Odpri mapo...</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="staraTockaHorizontal">
+       <item>
+        <widget class="QLabel" name="staraTockaLabel">
+         <property name="text">
+          <string>Prejšnja točka</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="staraTocka"/>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
