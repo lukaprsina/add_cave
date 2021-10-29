@@ -65,7 +65,7 @@ private:
     std::filesystem::path get_svx_file(std::filesystem::path open_path = "");
     std::filesystem::path canonical_path(std::filesystem::path path);
     std::filesystem::path get_svx_file_in_folder(std::filesystem::path path);
-    std::vector<std::string> read_file(std::filesystem::path path);
+    std::vector<std::string> read_file(std::filesystem::path path, bool create = false);
     void write_file(std::filesystem::path path, std::vector<std::string> &lines);
     void add_measurment();
     void autocomplete(Meritev &meritev);

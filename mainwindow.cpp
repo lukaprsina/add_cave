@@ -11,7 +11,9 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    // https://doc.qt.io/qt-5/windows-deployment.html
+    std::vector<std::string> config = read_file("config.txt", true);
+    if (config.size() == 1)        
+        m_DefaultPath = config[0];
 }
 
 MainWindow::~MainWindow()
@@ -21,7 +23,11 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_novaMeritevFolder_clicked()
 {
-    m_Nova.meritev = get_svx_file(m_DefaultPath);
+    std::filesystem::path folder = get_svx_file(m_DefaultPath);
+    if (folder.empty())
+        return;
+
+    m_Nova.meritev = folder;
     ui->novaMeritevPath->setText(QString::fromStdString(m_Nova.meritev.generic_string()));
 
     auto leto_folder = canonical_path(m_Nova.meritev.parent_path().parent_path());
@@ -31,11 +37,16 @@ void MainWindow::on_novaMeritevFolder_clicked()
     auto jama_folder = canonical_path(m_Nova.leto.parent_path().parent_path());
     m_Nova.jama = canonical_path(get_svx_file_in_folder(jama_folder));
     ui->novaJamaPath->setText(QString::fromStdString(m_Nova.jama.generic_string()));
+    m_DefaultPath = jama_folder;
 }
 
 void MainWindow::on_staraMeritevFolder_clicked()
 {
-    m_Stara.meritev = get_svx_file(m_DefaultPath);
+    std::filesystem::path folder = get_svx_file(m_DefaultPath);
+    if (folder.empty())
+        return;
+
+    m_Stara.meritev = folder;
     ui->staraMeritevPath->setText(QString::fromStdString(m_Stara.meritev.generic_string()));
 
     auto leto_folder = canonical_path(m_Stara.meritev.parent_path().parent_path());
@@ -134,22 +145,27 @@ void MainWindow::on_vnesiButton_clicked()
         write_file(m_Nova.jama, lines);
     }
 
+    std::vector<std::string> config = {m_Nova.jama.parent_path().parent_path().generic_string()};
+    write_file("config.txt", config);
+
     QMessageBox msgBox;
     msgBox.setWindowTitle(tr("Dodaj jamo"));
     msgBox.setText(QString::fromStdString("Meritve so vnešene."));
     msgBox.exec();
 }
 
-std::vector<std::string> MainWindow::read_file(std::filesystem::path path)
+std::vector<std::string> MainWindow::read_file(std::filesystem::path path, bool create)
 {
-    std::ifstream in(path.c_str(), std::ios_base::in);
-    if (!in)
+    std::ifstream in(path.c_str(), std::ios_base::in |
+                     (create ? (std::ios_base::app | std::ios_base::out) : 0));
+    if (!in && !create)
     {
         QMessageBox msgBox;
         msgBox.setWindowTitle(tr("Dodaj jamo"));
         msgBox.setText(QString::fromStdString("Datoteke ni mogoče prebrati."));
         msgBox.exec();
         return {};
+
     }
 
     std::vector<std::string> lines;

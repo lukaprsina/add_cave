@@ -49,7 +49,7 @@
        <item>
         <widget class="QLabel" name="novaMeritevLabel">
          <property name="text">
-          <string>Datoteka meritve</string>
+          <string>Meritev</string>
          </property>
         </widget>
        </item>
@@ -91,7 +91,7 @@
        <item>
         <widget class="QLabel" name="novaLetoLabel">
          <property name="text">
-          <string>Datoteka leta</string>
+          <string>Leto</string>
          </property>
         </widget>
        </item>
@@ -133,7 +133,7 @@
        <item>
         <widget class="QLabel" name="novaJamaLabel">
          <property name="text">
-          <string>Datoteka jame</string>
+          <string>Jama</string>
          </property>
         </widget>
        </item>
@@ -209,7 +209,7 @@
        <item>
         <widget class="QLabel" name="staraMeritevLabel">
          <property name="text">
-          <string>Datoteka meritve</string>
+          <string>Meritev</string>
          </property>
         </widget>
        </item>
@@ -244,7 +244,7 @@
        <item>
         <widget class="QLabel" name="staraLetoLabel">
          <property name="text">
-          <string>Datoteka leta</string>
+          <string>Leto</string>
          </property>
         </widget>
        </item>
@@ -286,7 +286,7 @@
        <item>
         <widget class="QLabel" name="staraJamaLabel">
          <property name="text">
-          <string>Datoteka jame</string>
+          <string>Jama</string>
          </property>
         </widget>
        </item>
@@ -328,7 +328,7 @@
        <item>
         <widget class="QLabel" name="staraTockaLabel">
          <property name="text">
-          <string>Prejšnja točka</string>
+          <string>Stara točka</string>
          </property>
         </widget>
        </item>
