@@ -56,6 +56,7 @@ void MainWindow::on_staraMeritevFolder_clicked()
     auto jama_folder = canonical_path(m_Stara.leto.parent_path().parent_path());
     m_Stara.jama = canonical_path(get_svx_file_in_folder(jama_folder));
     ui->staraJamaPath->setText(QString::fromStdString(m_Stara.jama.generic_string()));
+    m_DefaultPath = jama_folder;
 }
 
 void MainWindow::on_novaLetoFolder_clicked()
@@ -147,6 +148,7 @@ void MainWindow::on_vnesiButton_clicked()
 
     std::vector<std::string> config = {m_Nova.jama.parent_path().parent_path().generic_string()};
     write_file("config.txt", config);
+    m_DefaultPath = std::filesystem::path(config[0]);
 
     QMessageBox msgBox;
     msgBox.setWindowTitle(tr("Dodaj jamo"));
