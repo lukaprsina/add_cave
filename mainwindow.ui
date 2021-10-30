@@ -33,7 +33,7 @@
       <x>10</x>
       <y>30</y>
       <width>741</width>
-      <height>337</height>
+      <height>352</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -80,7 +80,7 @@
        <item>
         <widget class="QPushButton" name="novaMeritevFolder">
          <property name="text">
-          <string>Odpri mapo...</string>
+          <string>Izberi datoteko...</string>
          </property>
         </widget>
        </item>
@@ -122,7 +122,7 @@
        <item>
         <widget class="QPushButton" name="novaLetoFolder">
          <property name="text">
-          <string>Odpri mapo...</string>
+          <string>Izberi datoteko...</string>
          </property>
         </widget>
        </item>
@@ -164,7 +164,7 @@
        <item>
         <widget class="QPushButton" name="novaJamaFolder">
          <property name="text">
-          <string>Odpri mapo...</string>
+          <string>Izberi datoteko...</string>
          </property>
         </widget>
        </item>
@@ -233,7 +233,7 @@
        <item>
         <widget class="QPushButton" name="staraMeritevFolder">
          <property name="text">
-          <string>Odpri mapo...</string>
+          <string>Izberi datoteko...</string>
          </property>
         </widget>
        </item>
@@ -275,7 +275,7 @@
        <item>
         <widget class="QPushButton" name="staraLetoFolder">
          <property name="text">
-          <string>Odpri mapo...</string>
+          <string>Izberi datoteko...</string>
          </property>
         </widget>
        </item>
@@ -317,7 +317,7 @@
        <item>
         <widget class="QPushButton" name="staraJamaFolder">
          <property name="text">
-          <string>Odpri mapo...</string>
+          <string>Izberi datoteko...</string>
          </property>
         </widget>
        </item>

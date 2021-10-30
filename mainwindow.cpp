@@ -12,7 +12,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     std::vector<std::string> config = read_file("config.txt", true);
-    if (config.size() == 1)        
+    if (config.size() == 1)
         m_DefaultPath = config[0];
 }
 
@@ -158,8 +158,9 @@ void MainWindow::on_vnesiButton_clicked()
 
 std::vector<std::string> MainWindow::read_file(std::filesystem::path path, bool create)
 {
-    std::ifstream in(path.c_str(), std::ios_base::in |
-                     (create ? (std::ios_base::app | std::ios_base::out) : 0));
+    std::ifstream in(path.c_str(),
+                     std::ios_base::in |
+                         (create ? (std::ios_base::app | std::ios_base::out) : std::ios_base::app));
     if (!in && !create)
     {
         QMessageBox msgBox;
@@ -167,7 +168,6 @@ std::vector<std::string> MainWindow::read_file(std::filesystem::path path, bool 
         msgBox.setText(QString::fromStdString("Datoteke ni mogoče prebrati."));
         msgBox.exec();
         return {};
-
     }
 
     std::vector<std::string> lines;
