@@ -13,5 +13,6 @@ Ko razširite stisnjeno datoteko novega odseka jame v pravo mapo, odprite ta pro
 - ponovite prvi korak še v odseku ``Stara meritev``, toda tokrat izberite **prejšnjo** .svx datoteko, ki ima eno skupno točko z novo meritvijo
 - pod odsekom ``Nova točka`` napišite ime točke, ki se združi s staro meritvijo in vice versa za ``Stara točka``
 
-``Odpri datoteko...`` odpre trenutno izbrano datoteko v besedilnem polju levo z privzetim program,
+``Odpri datoteko...`` odpre trenutno izbrano datoteko v besedilnem polju levo z privzetim program
+
 ``Odpri mapo...`` pa odpre mapo, v kateri je datoteka v besedilnem polju
