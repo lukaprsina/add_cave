@@ -31,7 +31,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>30</y>
+      <y>0</y>
       <width>741</width>
       <height>352</height>
      </rect>
@@ -73,7 +73,7 @@
        <item>
         <widget class="QPushButton" name="novaMeritevEdit">
          <property name="text">
-          <string>Uredi datoteko...</string>
+          <string>Odpri mapo...</string>
          </property>
         </widget>
        </item>
@@ -115,7 +115,7 @@
        <item>
         <widget class="QPushButton" name="novaLetoEdit">
          <property name="text">
-          <string>Uredi datoteko...</string>
+          <string>Odpri mapo...</string>
          </property>
         </widget>
        </item>
@@ -157,7 +157,7 @@
        <item>
         <widget class="QPushButton" name="novaJamaEdit">
          <property name="text">
-          <string>Uredi datoteko...</string>
+          <string>Odpri mapo...</string>
          </property>
         </widget>
        </item>
@@ -226,7 +226,7 @@
        <item>
         <widget class="QPushButton" name="staraMeritevEdit">
          <property name="text">
-          <string>Uredi datoteko...</string>
+          <string>Odpri mapo...</string>
          </property>
         </widget>
        </item>
@@ -268,7 +268,7 @@
        <item>
         <widget class="QPushButton" name="staraLetoEdit">
          <property name="text">
-          <string>Uredi datoteko...</string>
+          <string>Odpri mapo...</string>
          </property>
         </widget>
        </item>
@@ -310,7 +310,7 @@
        <item>
         <widget class="QPushButton" name="staraJamaEdit">
          <property name="text">
-          <string>Uredi datoteko...</string>
+          <string>Odpri mapo...</string>
          </property>
         </widget>
        </item>

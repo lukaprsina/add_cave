@@ -1,5 +1,7 @@
 #include <unistd.h>
 #include <filesystem>
+#include <cstring>
+#include <iostream>
 
 namespace
 {
@@ -22,10 +24,5 @@ namespace
 
 void open_file(std::filesystem::path &path)
 {
-    system(std::string(std::string("/usr/bin/xdg-open ") + path.generic_string()).c_str());
-}
-
-void open_file_in_editor(std::filesystem::path &path)
-{
-    system(std::string(std::string("/usr/bin/code ") + path.generic_string()).c_str());
+    std::system(std::string(std::string("/usr/bin/bash -c /usr/bin/xdg-open ") + path.generic_string()).c_str());
 }

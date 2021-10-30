@@ -259,6 +259,12 @@ std::filesystem::path MainWindow::get_svx_file_in_folder(std::filesystem::path p
     return svx_file;
 }
 
+void MainWindow::open_folder(std::filesystem::path &path)
+{
+    std::filesystem::path folder = path.parent_path();
+    open_file(folder);
+}
+
 void MainWindow::on_novaMeritevFile_clicked()
 {
     open_file(m_Nova.meritev);
@@ -291,30 +297,30 @@ void MainWindow::on_staraJamaFile_clicked()
 
 void MainWindow::on_novaMeritevEdit_clicked()
 {
-    open_file_in_editor(m_Nova.meritev);
+    open_folder(m_Nova.meritev);
 }
 
 void MainWindow::on_novaLetoEdit_clicked()
 {
-    open_file_in_editor(m_Nova.leto);
+    open_folder(m_Nova.leto);
 }
 
 void MainWindow::on_novaJamaEdit_clicked()
 {
-    open_file_in_editor(m_Nova.jama);
+    open_folder(m_Nova.jama);
 }
 
 void MainWindow::on_staraMeritevEdit_clicked()
 {
-    open_file_in_editor(m_Stara.meritev);
+    open_folder(m_Stara.meritev);
 }
 
 void MainWindow::on_staraLetoEdit_clicked()
 {
-    open_file_in_editor(m_Stara.leto);
+    open_folder(m_Stara.leto);
 }
 
 void MainWindow::on_staraJamaEdit_clicked()
 {
-    open_file_in_editor(m_Stara.jama);
+    open_folder(m_Stara.jama);
 }

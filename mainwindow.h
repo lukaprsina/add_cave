@@ -69,8 +69,9 @@ private:
     void write_file(std::filesystem::path path, std::vector<std::string> &lines);
     void add_measurment();
     void autocomplete(Meritev &meritev);
+    void open_folder(std::filesystem::path &path);
 
-    std::filesystem::path m_DefaultPath = "";///home/luka/dev/qt/kanin_rombon/surveys/brezno_specega_dinozavra/2021";
+    std::filesystem::path m_DefaultPath = ""; ///home/luka/dev/qt/kanin_rombon/surveys/brezno_specega_dinozavra/2021";
 
     Meritev m_Nova{};
     Meritev m_Stara{};
