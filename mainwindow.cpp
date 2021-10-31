@@ -228,6 +228,9 @@ std::filesystem::path MainWindow::get_svx_file_in_folder(std::filesystem::path p
 {
     int number_of_svx_files = 0;
     std::filesystem::path svx_file;
+    if (path.empty())
+        return std::filesystem::path();
+
     for (auto &p : std::filesystem::directory_iterator(path))
     {
         if (p.path().extension() == ".svx")
