@@ -24,5 +24,12 @@ namespace
 
 void open_file(std::filesystem::path &path)
 {
-    std::system(std::string(std::string("/usr/bin/bash -c /usr/bin/xdg-open ") + path.generic_string()).c_str());
+    //const char *cmd = std::string(std::string("/usr/bin/bash -c /usr/bin/xdg-open ") /* + path.generic_string() */).c_str();
+    std::string string = std::string("/usr/bin/xdg-open \"");
+    string += path.generic_string();
+    string += "\"";
+    const char *cmd = string.c_str();
+
+    std::cout << cmd << std::endl;
+    std::system(cmd);
 }
